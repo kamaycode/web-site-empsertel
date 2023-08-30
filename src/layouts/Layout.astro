@@ -1,0 +1,110 @@
+---
+import '~/assets/css/icons.css';
+import '~/assets/css/animate.css';
+import '~/assets/css/slick.css';
+import '~/assets/css/magnific-popup.css';
+import '~/assets/css/metismenu.css';
+import '~/assets/css/nice-select2.css';
+import '~/assets/css/bootstrap.min.css';
+import '~/assets/css/style.css';
+
+import TopBarWrapper from "~/components/top-bar-wrapper.astro";
+import MenuHead from "~/components/menu-head.astro";
+import Footer from "~/components/footer.astro"
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kamay Code">
+    <!-- ======== Page title ============ -->
+    <title>Empsertel Network S.A - Servicios de Telecomunicación</title>
+    <!-- ========== Favicon Icon ========== -->
+    <link rel="shortcut icon" href="/assets/img/favicon.png">
+    <!-- ===========  All Stylesheet ================= -->
+    <!-- template main style css file -->
+</head>
+<body class="body-wrapper">
+
+        <!-- preloader -->
+        <div id="preloader" class="preloader">
+            <div class="animation-preloader">
+                <div class="spinner">
+                </div>
+                <div class="txt-loading">
+                    <span data-text-preloader="E" class="letters-loading">
+                            E
+                        </span>
+                    <span data-text-preloader="M" class="letters-loading">
+                            M
+                        </span>
+                    <span data-text-preloader="P" class="letters-loading">
+                           P
+                        </span>
+                    <span data-text-preloader="S" class="letters-loading">
+                            S
+                        </span>
+                    <span data-text-preloader="E" class="letters-loading">
+                            E
+                        </span>
+                    <span data-text-preloader="R" class="letters-loading">
+                            R
+                        </span>
+                    <span data-text-preloader="T" class="letters-loading">
+                            T
+                        </span>
+                    <span data-text-preloader="E" class="letters-loading">
+                            E
+                        </span>
+                    <span data-text-preloader="L" class="letters-loading">
+                            L
+                        </span>
+                </div>
+                <p class="text-center">Cargando</p>
+            </div>
+            <div class="loader">
+                <div class="row">
+                    <div class="col-3 loader-section section-left">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-left">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-right">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-right">
+                        <div class="bg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <TopBarWrapper/>
+    <MenuHead/>
+    <slot/>
+    <Footer/>
+
+    <!--  ALl JS Plugins
+    ====================================== -->
+    <script is:inline src="/assets/js/jquery.min.js"></script>
+    <script is:inline src="/assets/js/jquery.easing.js"></script>
+    <script is:inline src="/assets/js/popper.min.js"></script>
+    <script is:inline src="/assets/js/bootstrap.min.js"></script>
+    <script is:inline src="/assets/js/isotope.pkgd.min.js"></script>
+    <script is:inline src="/assets/js/imageload.min.js"></script>
+    <script is:inline src="/assets/js/scrollUp.min.js"></script>
+    <script is:inline src="/assets/js/slick.min.js"></script>
+    <script is:inline src="/assets/js/slick-animation.min.js"></script>
+    <script is:inline src="/assets/js/magnific-popup.min.js"></script>
+    <script is:inline src="/assets/js/wow.min.js"></script>
+    <script is:inline src="/assets/js/metismenu.js"></script>
+    <script is:inline src="/assets/js/nice-select2.js"></script>
+    <script is:inline src="/assets/js/active.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,372 @@
+---
+import Layout from "~/layouts/Layout.astro";
+---
+
+<Layout>
+    <div class="page-banner-wrap text-center bg-cover" style="background-image: url('/assets/img/page-banner.jpg')">
+        <div class="container">
+            <div class="page-heading text-white">
+                <h1>Contacta con Nosotros</h1>
+            </div>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Contacto</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <section class="contact-page-wrap section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="single-contact-card card1">
+                        <div class="top-part">
+                            <div class="icon">
+                                <i class="fal fa-envelope"></i>
+                            </div>
+                            <div class="title">
+                                <h4>Correo Electrónico</h4>
+                            </div>
+                        </div>
+                        <div class="bottom-part">
+                            <div class="info">
+                                <p>administracion@empsertel.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="single-contact-card card2">
+                        <div class="top-part">
+                            <div class="icon">
+                                <i class="fal fa-phone"></i>
+                            </div>
+                            <div class="title">
+                                <h4>Teléfono</h4>
+                            </div>
+                        </div>
+                        <div class="bottom-part">
+                            <div class="info">
+                                <p>+(593) 02 225 7536</p>
+                                <p>+(593) 98 330 8949</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="single-contact-card card3">
+                        <div class="top-part">
+                            <div class="icon">
+                                <i class="fal fa-map-marker-alt"></i>
+                            </div>
+                            <div class="title">
+                                <h4>Dirección</h4>
+                            </div>
+                        </div>
+                        <div class="bottom-part">
+                            <div class="info">
+                                <p>Av. Jose Drom e4-22 y Pereira Esquina Edificio Iñaquito II Oficina 603</p>
+                                <p>Quito, Ecuador</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="single-contact-card card3">
+                        <div class="top-part">
+                            <div class="icon">
+                                <i class="fal fa-map-marker-alt"></i>
+                            </div>
+                            <div class="title">
+                                <h4>Dirección</h4>
+                            </div>
+                        </div>
+                        <div class="bottom-part">
+                            <div class="info">
+                                <p>7901 4th ST N STE 300 ST Petersburg, FL 33702</p>
+                                <p>Florida, EEUU</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="single-contact-card card3">
+                        <div class="top-part">
+                            <div class="icon">
+                                <i class="fal fa-map-marker-alt"></i>
+                            </div>
+                            <div class="title">
+                                <h4>Dirección</h4>
+                            </div>
+                        </div>
+                        <div class="bottom-part">
+                            <div class="info">
+                                <p>Puente Piedra Urb. Las Piedras Cal 8, Lote 13</p>
+                                <p>Lima, Perú</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="single-contact-card card3">
+                        <div class="top-part">
+                            <div class="icon">
+                                <i class="fal fa-map-marker-alt"></i>
+                            </div>
+                            <div class="title">
+                                <h4>Dirección</h4>
+                            </div>
+                        </div>
+                        <div class="bottom-part">
+                            <div class="info">
+                                <p>Calle 128B N56 A 53, Barrio las Villas</p>
+                                <p>Bogatá, Lima</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="map"></div>
+</Layout>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAG6lz--d0ypidC9CIwfRtxZd_GDGJKYo&callback=initMap" async defer></script>
+
+<script is:inline>
+    var map;
+
+function initMap() {
+    var quito = {
+        info: '<strong>Av. Jose Drom e4-22 y Pereira Esquina Edificio Iñaquito II Oficina 603.<br>Quito, Ecuador',
+        lat: -0.171432,
+        long: -78.485514,
+    }
+
+    var florida = {
+        info: '<strong>7901 4th ST N STE 300 ST Petersburg.<br>Florida, EEUU',
+        lat: 27.799437385191553,
+        long: -82.74803318276503,
+    }
+
+    var lima = {
+        info: '<strong>Puente Piedra Urb. Las Piedras Cal 8, Lote 13.<br>Lima, Perú',
+        lat: -16.39397432729208,
+        long: -71.55595368345246,
+    }
+
+    var bogota = {
+        info: '<strong>Calle 128B N56 A 53, Barrio las Villas.<br>Bogotá, Colombia ',
+        lat: 4.714526788961443,
+        long: -74.06634386007451,
+    }
+
+    var locations = [
+        [quito.info, quito.lat, quito.long, 0],
+        [florida.info, florida.lat, florida.long, 1],
+        [lima.info, lima.lat, lima.long, 2],
+        [bogota.info, bogota.lat, bogota.long, 2],
+    ]
+
+    var styleMatp = [{
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#1d2c4d"
+        }]
+    }, {
+        "elementType": "labels.text.fill",
+        "stylers": [{
+            "color": "#8ec3b9"
+        }]
+    }, {
+        "elementType": "labels.text.stroke",
+        "stylers": [{
+            "color": "#1a3646"
+        }]
+    }, {
+        "featureType": "administrative.country",
+        "elementType": "geometry.stroke",
+        "stylers": [{
+            "color": "#4b6878"
+        }]
+    }, {
+        "featureType": "administrative.land_parcel",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+            "color": "#64779e"
+        }]
+    }, {
+        "featureType": "administrative.province",
+        "elementType": "geometry.stroke",
+        "stylers": [{
+            "color": "#4b6878"
+        }]
+    }, {
+        "featureType": "landscape.man_made",
+        "elementType": "geometry.stroke",
+        "stylers": [{
+            "color": "#334e87"
+        }]
+    }, {
+        "featureType": "landscape.natural",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#023e58"
+        }]
+    }, {
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#283d6a"
+        }]
+    }, {
+        "featureType": "poi",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+            "color": "#6f9ba5"
+        }]
+    }, {
+        "featureType": "poi",
+        "elementType": "labels.text.stroke",
+        "stylers": [{
+            "color": "#1d2c4d"
+        }]
+    }, {
+        "featureType": "poi.park",
+        "elementType": "geometry.fill",
+        "stylers": [{
+            "color": "#023e58"
+        }]
+    }, {
+        "featureType": "poi.park",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+            "color": "#3C7680"
+        }]
+    }, {
+        "featureType": "road",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#304a7d"
+        }]
+    }, {
+        "featureType": "road",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+            "color": "#98a5be"
+        }]
+    }, {
+        "featureType": "road",
+        "elementType": "labels.text.stroke",
+        "stylers": [{
+            "color": "#1d2c4d"
+        }]
+    }, {
+        "featureType": "road.highway",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#2c6675"
+        }]
+    }, {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [{
+            "color": "#255763"
+        }]
+    }, {
+        "featureType": "road.highway",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+            "color": "#b0d5ce"
+        }]
+    }, {
+        "featureType": "road.highway",
+        "elementType": "labels.text.stroke",
+        "stylers": [{
+            "color": "#023e58"
+        }]
+    }, {
+        "featureType": "transit",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+            "color": "#98a5be"
+        }]
+    }, {
+        "featureType": "transit",
+        "elementType": "labels.text.stroke",
+        "stylers": [{
+            "color": "#1d2c4d"
+        }]
+    }, {
+        "featureType": "transit.line",
+        "elementType": "geometry.fill",
+        "stylers": [{
+            "color": "#283d6a"
+        }]
+    }, {
+        "featureType": "transit.station",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#3a4762"
+        }]
+    }, {
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [{
+            "color": "#0e1626"
+        }]
+    }, {
+        "featureType": "water",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+            "color": "#4e6d70"
+        }]
+    }]
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 3,
+        center: new google.maps.LatLng(-0.171432, -78.485514),
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        styles: styleMatp
+    })
+
+    var infowindow = new google.maps.InfoWindow({})
+
+    var marker, i
+
+    for (i = 0; i < locations.length; i++) {
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            map: map,
+            icon: "https://i.ibb.co/MkxYzsx/maker-empsertel.png"
+        })
+
+        google.maps.event.addListener(
+            marker,
+            'click',
+            (function(marker, i) {
+                return function() {
+                    infowindow.setContent(locations[i][0])
+                    infowindow.open(map, marker)
+                }
+            })(marker, i)
+        )
+    }
+}
+</script>
+
+
+<style>
+    #map {
+        height: 100%;
+    }
+    
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+</style>

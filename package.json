@@ -1,0 +1,16 @@
+{
+  "name": "web-site-empsertel",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@googlemaps/js-api-loader": "^1.16.2",
+    "astro": "^2.10.14"
+  }
+}
